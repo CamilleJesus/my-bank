@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210812 17:02:21.883" rpa="false" schemaversion="2">
+<suite id="s1" name="Suite" source="C:\Users\Camille\Documents\Git\Pessoal\my-bank\suite.robot">
+<test id="s1-t1" name="Login with No Credentials">
+<kw name="Run App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Test</arg>
+<arg>app=${EXECDIR}/app/mybank.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210812 17:02:22.048" endtime="20210812 17:02:33.580"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:02:33.581" endtime="20210812 17:02:36.060"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:22.048" endtime="20210812 17:02:36.060"/>
+</kw>
+<kw name="Clear Text Fields">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Email"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:02:36.064" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Email"]'</msg>
+<status status="PASS" starttime="20210812 17:02:36.062" endtime="20210812 17:02:36.175"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Password"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:02:36.176" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Password"]'</msg>
+<status status="PASS" starttime="20210812 17:02:36.175" endtime="20210812 17:02:36.217"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:36.062" endtime="20210812 17:02:36.217"/>
+</kw>
+<kw name="Try to Login">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:02:36.219" level="INFO">Clicking element 'accessibility_id=LOG IN'.</msg>
+<status status="PASS" starttime="20210812 17:02:36.218" endtime="20210812 17:02:36.294"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:36.217" endtime="20210812 17:02:36.294"/>
+</kw>
+<kw name="Email Error Should Be Visible">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=Please enter a valid email</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:02:36.295" endtime="20210812 17:02:37.010"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:36.295" endtime="20210812 17:02:37.010"/>
+</kw>
+<kw name="Password Error Should Be Visible">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=Please enter a valid password</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:02:37.011" endtime="20210812 17:02:37.040"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:37.010" endtime="20210812 17:02:37.040"/>
+</kw>
+<kw name="Quit App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210812 17:02:37.421" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210812 17:02:37.041" endtime="20210812 17:02:37.422"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210812 17:02:37.422" endtime="20210812 17:02:38.290"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:37.041" endtime="20210812 17:02:38.290"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:22.048" endtime="20210812 17:02:38.291"/>
+</test>
+<test id="s1-t2" name="Login with No Email">
+<kw name="Run App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Test</arg>
+<arg>app=${EXECDIR}/app/mybank.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210812 17:02:38.292" endtime="20210812 17:02:49.681"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:02:49.681" endtime="20210812 17:02:51.509"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:38.292" endtime="20210812 17:02:51.510"/>
+</kw>
+<kw name="Clear Text Fields">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Email"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:02:51.512" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Email"]'</msg>
+<status status="PASS" starttime="20210812 17:02:51.510" endtime="20210812 17:02:52.137"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Password"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:02:52.139" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Password"]'</msg>
+<status status="PASS" starttime="20210812 17:02:52.137" endtime="20210812 17:02:52.183"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:51.510" endtime="20210812 17:02:52.183"/>
+</kw>
+<kw name="Write Email">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Email"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:02:52.186" level="INFO">Clicking element 'xpath=//android.widget.EditText[@text="Email"]'.</msg>
+<status status="PASS" starttime="20210812 17:02:52.184" endtime="20210812 17:02:52.276"/>
+</kw>
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<arg>input text</arg>
+<arg>email@email</arg>
+<doc>Execute ADB shell commands</doc>
+<status status="PASS" starttime="20210812 17:02:52.276" endtime="20210812 17:02:53.639"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20210812 17:02:53.639" endtime="20210812 17:02:53.912"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:52.184" endtime="20210812 17:02:53.913"/>
+</kw>
+<kw name="Try to Login">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:02:53.915" level="INFO">Clicking element 'accessibility_id=LOG IN'.</msg>
+<status status="PASS" starttime="20210812 17:02:53.913" endtime="20210812 17:02:54.643"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:53.913" endtime="20210812 17:02:54.643"/>
+</kw>
+<kw name="Password Error Should Be Visible">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=Please enter a valid password</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:02:54.644" endtime="20210812 17:02:55.249"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:54.643" endtime="20210812 17:02:55.249"/>
+</kw>
+<kw name="Quit App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210812 17:02:55.630" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210812 17:02:55.250" endtime="20210812 17:02:55.630"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210812 17:02:55.631" endtime="20210812 17:02:56.427"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:55.250" endtime="20210812 17:02:56.427"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:38.291" endtime="20210812 17:02:56.427"/>
+</test>
+<test id="s1-t3" name="Login with No Password">
+<kw name="Run App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Test</arg>
+<arg>app=${EXECDIR}/app/mybank.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210812 17:02:56.429" endtime="20210812 17:03:08.340"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:03:08.340" endtime="20210812 17:03:10.978"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:56.429" endtime="20210812 17:03:10.978"/>
+</kw>
+<kw name="Clear Text Fields">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Email"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:10.981" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Email"]'</msg>
+<status status="PASS" starttime="20210812 17:03:10.979" endtime="20210812 17:03:11.089"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Password"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:11.091" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Password"]'</msg>
+<status status="PASS" starttime="20210812 17:03:11.089" endtime="20210812 17:03:11.132"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:10.979" endtime="20210812 17:03:11.133"/>
+</kw>
+<kw name="Write Password">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Password"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:11.134" level="INFO">Clicking element 'xpath=//android.widget.EditText[@text="Password"]'.</msg>
+<status status="PASS" starttime="20210812 17:03:11.133" endtime="20210812 17:03:11.222"/>
+</kw>
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<arg>input text</arg>
+<arg>password</arg>
+<doc>Execute ADB shell commands</doc>
+<status status="PASS" starttime="20210812 17:03:11.222" endtime="20210812 17:03:12.279"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20210812 17:03:12.280" endtime="20210812 17:03:12.478"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:11.133" endtime="20210812 17:03:12.478"/>
+</kw>
+<kw name="Try to Login">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:12.481" level="INFO">Clicking element 'accessibility_id=LOG IN'.</msg>
+<status status="PASS" starttime="20210812 17:03:12.480" endtime="20210812 17:03:13.204"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:12.479" endtime="20210812 17:03:13.204"/>
+</kw>
+<kw name="Email Error Should Be Visible">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=Please enter a valid email</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:03:13.205" endtime="20210812 17:03:13.809"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:13.205" endtime="20210812 17:03:13.810"/>
+</kw>
+<kw name="Quit App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210812 17:03:14.285" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210812 17:03:13.810" endtime="20210812 17:03:14.286"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210812 17:03:14.286" endtime="20210812 17:03:15.330"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:13.810" endtime="20210812 17:03:15.331"/>
+</kw>
+<status status="PASS" starttime="20210812 17:02:56.428" endtime="20210812 17:03:15.331"/>
+</test>
+<test id="s1-t4" name="Login Complete">
+<kw name="Run App" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Test</arg>
+<arg>app=${EXECDIR}/app/mybank.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210812 17:03:15.333" endtime="20210812 17:03:27.892"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20210812 17:03:27.892" endtime="20210812 17:03:30.239"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:15.333" endtime="20210812 17:03:30.239"/>
+</kw>
+<kw name="Clear Text Fields">
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Email"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:30.241" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Email"]'</msg>
+<status status="PASS" starttime="20210812 17:03:30.240" endtime="20210812 17:03:30.356"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Password"]</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:30.358" level="INFO">Clear text field 'xpath=//android.widget.EditText[@text="Password"]'</msg>
+<status status="PASS" starttime="20210812 17:03:30.356" endtime="20210812 17:03:30.398"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:30.240" endtime="20210812 17:03:30.398"/>
+</kw>
+<kw name="Write Email">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Email"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:30.400" level="INFO">Clicking element 'xpath=//android.widget.EditText[@text="Email"]'.</msg>
+<status status="PASS" starttime="20210812 17:03:30.399" endtime="20210812 17:03:30.473"/>
+</kw>
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<arg>input text</arg>
+<arg>email@email</arg>
+<doc>Execute ADB shell commands</doc>
+<status status="PASS" starttime="20210812 17:03:30.473" endtime="20210812 17:03:31.626"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20210812 17:03:31.626" endtime="20210812 17:03:31.808"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:30.398" endtime="20210812 17:03:31.809"/>
+</kw>
+<kw name="Write Password">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.EditText[@text="Password"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:31.811" level="INFO">Clicking element 'xpath=//android.widget.EditText[@text="Password"]'.</msg>
+<status status="PASS" starttime="20210812 17:03:31.810" endtime="20210812 17:03:32.516"/>
+</kw>
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<arg>input text</arg>
+<arg>password</arg>
+<doc>Execute ADB shell commands</doc>
+<status status="PASS" starttime="20210812 17:03:32.516" endtime="20210812 17:03:33.636"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>4</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<status status="PASS" starttime="20210812 17:03:33.636" endtime="20210812 17:03:33.841"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:31.809" endtime="20210812 17:03:33.842"/>
+</kw>
+<kw name="Try to Login">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=LOG IN</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210812 17:03:33.845" level="INFO">Clicking element 'accessibility_id=LOG IN'.</msg>
+<status status="PASS" starttime="20210812 17:03:33.843" endtime="20210812 17:03:34.522"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:33.842" endtime="20210812 17:03:34.522"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="AppiumLibrary">
+<arg>accessibility_id=Please enter a valid email</arg>
+<doc>Verifies that current page not contains `locator` element.</doc>
+<msg timestamp="20210812 17:03:34.546" level="INFO">Current page not contains element 'accessibility_id=Please enter a valid email'.</msg>
+<status status="PASS" starttime="20210812 17:03:34.522" endtime="20210812 17:03:34.546"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="AppiumLibrary">
+<arg>accessibility_id=Please enter a valid password</arg>
+<doc>Verifies that current page not contains `locator` element.</doc>
+<msg timestamp="20210812 17:03:35.170" level="INFO">Current page not contains element 'accessibility_id=Please enter a valid password'.</msg>
+<status status="PASS" starttime="20210812 17:03:34.548" endtime="20210812 17:03:35.171"/>
+</kw>
+<kw name="Quit App" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210812 17:03:35.534" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210812 17:03:35.172" endtime="20210812 17:03:35.535"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210812 17:03:35.536" endtime="20210812 17:03:36.793"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:35.172" endtime="20210812 17:03:36.793"/>
+</kw>
+<status status="PASS" starttime="20210812 17:03:15.332" endtime="20210812 17:03:36.794"/>
+</test>
+<status status="PASS" starttime="20210812 17:02:21.885" endtime="20210812 17:03:36.795"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Suite">Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
