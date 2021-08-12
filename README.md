@@ -2,8 +2,9 @@
 My Bank App Test
 
 ## To start
-- Star Appium server
+- Start Appium server
+- Clone the repo locally
 - Install Robot and AppiumLibrary
 
 ## Run Tests
-- `robot -d .\logs suite.robot` (Windows)
+- `robot -d .\logs suite.robot` (on Windows)
